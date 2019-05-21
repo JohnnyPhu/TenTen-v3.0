@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TenTen" Class="TenTenDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=TenTen;Integrated Security=True" SettingsObjectName="DataAccess.Properties.Settings" SettingsPropertyName="TenTenConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Translate" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Category_Word" Member="Words" ThisKey="CategoryID" OtherKey="CategoryID" Type="Word" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Word" Member="Words">
+    <Type Name="Word">
+      <Column Name="Word" Member="Word1" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Translate" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Pronunciation" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Word_Image" Member="Images" ThisKey="Word1" OtherKey="WordID" Type="Image" />
+      <Association Name="Category_Word" Member="Category" ThisKey="CategoryID" OtherKey="CategoryID" Type="Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Image" Member="Images">
+    <Type Name="Image">
+      <Column Name="ImageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Image" Member="Image1" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="WordID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Word_Image" Member="Word" ThisKey="WordID" OtherKey="Word1" Type="Word" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

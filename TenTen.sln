@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainProgram", "MainProgram\MainProgram.csproj", "{83DC04DC-836D-4EEB-8DA8-52901CC9ACFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{F4DCE56E-6CE6-44F3-A1C1-C1B862C72D13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameController", "GameController\GameController.csproj", "{E65E5050-61CE-4FFD-AAA5-3773703538BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83DC04DC-836D-4EEB-8DA8-52901CC9ACFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DC04DC-836D-4EEB-8DA8-52901CC9ACFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DC04DC-836D-4EEB-8DA8-52901CC9ACFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DC04DC-836D-4EEB-8DA8-52901CC9ACFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4DCE56E-6CE6-44F3-A1C1-C1B862C72D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4DCE56E-6CE6-44F3-A1C1-C1B862C72D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4DCE56E-6CE6-44F3-A1C1-C1B862C72D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4DCE56E-6CE6-44F3-A1C1-C1B862C72D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65E5050-61CE-4FFD-AAA5-3773703538BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65E5050-61CE-4FFD-AAA5-3773703538BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65E5050-61CE-4FFD-AAA5-3773703538BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65E5050-61CE-4FFD-AAA5-3773703538BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

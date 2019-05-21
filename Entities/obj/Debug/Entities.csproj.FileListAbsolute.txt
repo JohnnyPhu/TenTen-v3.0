@@ -1,0 +1,5 @@
+B:\WPF\Project\Source\TenTen\Entities\bin\Debug\Entities.dll
+B:\WPF\Project\Source\TenTen\Entities\bin\Debug\Entities.pdb
+B:\WPF\Project\Source\TenTen\Entities\obj\Debug\Entities.dll
+B:\WPF\Project\Source\TenTen\Entities\obj\Debug\Entities.pdb
+B:\WPF\Project\Source\TenTen\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache

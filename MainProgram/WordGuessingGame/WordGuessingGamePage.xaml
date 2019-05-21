@@ -1,0 +1,39 @@
+﻿<Page x:Class="MainProgram.WordGuessingGame.WordGuessingGamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MainProgram.WordGuessingGame"
+      mc:Ignorable="d" 
+      d:DesignHeight="1200" d:DesignWidth="720"
+      Title="WordGuessingGamePage">
+
+    <Grid>
+        <StackPanel>
+            <GroupBox>
+                <GroupBox.Header>
+                    Game Panel
+                </GroupBox.Header>
+                <WrapPanel x:Name="GamePanel"></WrapPanel>
+            </GroupBox>
+
+            <GroupBox>
+                <GroupBox.Header>
+                    Word Description
+                </GroupBox.Header>
+                <Label x:Name="lblDescription" Visibility="Visible"></Label>
+            </GroupBox>
+            
+            <GroupBox>
+                <GroupBox.Header>
+                    Your Guess
+                    
+                </GroupBox.Header>
+                
+                <WrapPanel x:Name="GuessLettersPanel" HorizontalAlignment="Center">
+                    
+                </WrapPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

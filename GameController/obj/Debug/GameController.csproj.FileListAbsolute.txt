@@ -1,0 +1,7 @@
+B:\WPF\Project\Source\TenTen\GameController\bin\Debug\GameController.dll
+B:\WPF\Project\Source\TenTen\GameController\bin\Debug\GameController.pdb
+B:\WPF\Project\Source\TenTen\GameController\bin\Debug\DataAccess.dll
+B:\WPF\Project\Source\TenTen\GameController\bin\Debug\DataAccess.pdb
+B:\WPF\Project\Source\TenTen\GameController\obj\Debug\GameController.csprojResolveAssemblyReference.cache
+B:\WPF\Project\Source\TenTen\GameController\obj\Debug\GameController.dll
+B:\WPF\Project\Source\TenTen\GameController\obj\Debug\GameController.pdb
