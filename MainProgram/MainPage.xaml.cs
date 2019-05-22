@@ -46,18 +46,18 @@ namespace MainProgram.UI.MainPage
             ns.Navigate(new PairGamePage(CategoryId));
         }
 
-        private void WordGuessing_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService ns = NavigationService.GetNavigationService(this);
-            ns.Navigate(new WordGuessingGamePage());
-        }
+        //private void WordGuessing_Click(object sender, RoutedEventArgs e)
+        //{
+        //    NavigationService ns = NavigationService.GetNavigationService(this);
+        //    ns.Navigate(new WordGuessingGamePage());
+        //}
 
-        private void AskAndPickClick(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(cbo.SelectedValuePath.ToString());
-            NavigationService ns = NavigationService.GetNavigationService(this);
-            //ns.Navigate(new PickAndAskGamePage());
-        }
+        //private void AskAndPickClick(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBox.Show(cbo.SelectedValuePath.ToString());
+        //    NavigationService ns = NavigationService.GetNavigationService(this);
+        //    //ns.Navigate(new PickAndAskGamePage());
+        //}
 
         private void LearningWord_Click(object sender, RoutedEventArgs e)
         {
@@ -70,7 +70,7 @@ namespace MainProgram.UI.MainPage
                 //MessageBox.Show(cbo.SelectedValue.ToString());
                 CategoryId = Convert.ToInt32(cbo.SelectedValue.ToString());//tạo biến static để hứng dữ liệu
                 NavigationService ns = NavigationService.GetNavigationService(this);
-                ns.Navigate(new LearningWordPage());
+                ns.Navigate(new LearningWordPage(CategoryId));
             }
             catch (Exception)
             {

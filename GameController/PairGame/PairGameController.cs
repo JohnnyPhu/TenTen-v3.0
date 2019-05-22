@@ -116,6 +116,7 @@ namespace GameController.PairGame
                
                 int randomCardNumber = random.Next(0, initialCardCollection.Count);
                 Card card = initialCardCollection[randomCardNumber];
+
                 gameCardCollection.Add(card);
                 rectangle.Name = card.Name.ToString();
                 rectangle.DataContext = card;

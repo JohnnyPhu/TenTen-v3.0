@@ -62,9 +62,6 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PairGame\PairGameRule.xaml.cs">
-      <DependentUpon>PairGameRule.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PickAndAskGame\PickAndAskGamePage.xaml.cs">
       <DependentUpon>PickAndAskGamePage.xaml</DependentUpon>
     </Compile>
@@ -92,10 +89,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PairGame\PairGamePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PairGame\PairGameRule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +176,8 @@
     <Resource Include="Images\logo.png" />
     <Resource Include="Images\LearningWord.png" />
     <Resource Include="Images\play-icon.jpg" />
+    <Resource Include="Images\Refresh.png" />
+    <Resource Include="Images\Home.png" />
     <Content Include="Sounds\flipCard.wav" />
     <Content Include="Sounds\GameOver.wav" />
     <Content Include="Sounds\LevelComplete.wav" />

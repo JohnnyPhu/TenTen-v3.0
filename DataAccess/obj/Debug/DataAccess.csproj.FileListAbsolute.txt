@@ -3,3 +3,9 @@ B:\WPF\Project\Source\TenTen\DataAccess\bin\Debug\DataAccess.dll
 B:\WPF\Project\Source\TenTen\DataAccess\bin\Debug\DataAccess.pdb
 B:\WPF\Project\Source\TenTen\DataAccess\obj\Debug\DataAccess.dll
 B:\WPF\Project\Source\TenTen\DataAccess\obj\Debug\DataAccess.pdb
+B:\WPF\Project\Source\NewSource\TenTen-v3.0\DataAccess\bin\Debug\DataAccess.dll.config
+B:\WPF\Project\Source\NewSource\TenTen-v3.0\DataAccess\bin\Debug\DataAccess.dll
+B:\WPF\Project\Source\NewSource\TenTen-v3.0\DataAccess\bin\Debug\DataAccess.pdb
+B:\WPF\Project\Source\NewSource\TenTen-v3.0\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+B:\WPF\Project\Source\NewSource\TenTen-v3.0\DataAccess\obj\Debug\DataAccess.dll
+B:\WPF\Project\Source\NewSource\TenTen-v3.0\DataAccess\obj\Debug\DataAccess.pdb

@@ -5,21 +5,24 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MainProgram.WordGuessingGame"
       mc:Ignorable="d" 
-      d:DesignHeight="1200" d:DesignWidth="720"
+      d:DesignHeight="1080" d:DesignWidth="680"
       Title="WordGuessingGamePage">
 
-    <Grid>
-        <StackPanel>
-            <GroupBox>
+    <Grid Width="1080" Height="680">
+        <Grid.Background>
+            <ImageBrush ImageSource="../../Images/MainPageBackground.jpg"></ImageBrush>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Center">
+            <GroupBox MaxWidth="900" MaxHeight="380">
                 <GroupBox.Header>
                     Game Panel
                 </GroupBox.Header>
                 <WrapPanel x:Name="GamePanel"></WrapPanel>
             </GroupBox>
 
-            <GroupBox>
+            <GroupBox MaxWidth="900" MaxHeight="150">
                 <GroupBox.Header>
-                    Word Description
+                    Vietnamese mean
                 </GroupBox.Header>
                 <Label x:Name="lblDescription" Visibility="Visible"></Label>
             </GroupBox>
@@ -34,6 +37,12 @@
                     
                 </WrapPanel>
             </GroupBox>
+            <Button x:Name="btnHome" Click="btnHome_Click" Visibility="Hidden" HorizontalAlignment="Center" Width="250" Height="50" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../../Images/Home.png"></Image>
+                    <Label Padding="0">Back to home page</Label>
+                </StackPanel>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

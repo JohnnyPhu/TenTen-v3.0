@@ -30,12 +30,12 @@ namespace MainProgram.LearningWord
         private int _index = 0;
         public List<Word> lstW;
         private Word _currentW;
-        public LearningWordPage()
+        public LearningWordPage(int CategoryID)
         {
             InitializeComponent();
             wdal = new WordDAL();
             idal = new ImageDAL();
-            _CategoryID = MainPage.CategoryId;
+            _CategoryID = CategoryID;
             //LoadRandomWordByCategory(_CategoryID);
             //LoadRandomListWordByCategory(_CategoryID);
             lstW = new List<Word>();
@@ -44,12 +44,17 @@ namespace MainProgram.LearningWord
             //lấy từ đầu tiên trong danh sách
             _currentW = lstW[0];
             lblWord.Content = lstW[0].Word1;
+            lblWord.HorizontalContentAlignment = HorizontalAlignment.Center;
+            lblWord.VerticalContentAlignment = VerticalAlignment.Center;
             lblTranslate.Content = lstW[0].Translate;
+            lblTranslate.HorizontalContentAlignment = HorizontalAlignment.Center;
+            lblTranslate.VerticalContentAlignment = VerticalAlignment.Center;
             DataAccess.Image img = idal.getImageOfWord(lstW[0].Word1);
             byte[] i = img.Image1.ToArray();
             if (img == null) throw new Exception("#113 Từ " + lstW[0].Word1 + "chưa có hình.");
             BitmapImage image = LoadImage(i);
             img_word.Source = image;
+            img_word.Stretch = Stretch.Fill;
             PlayThePronunciation(lstW[0]);
         }
 
@@ -113,10 +118,14 @@ namespace MainProgram.LearningWord
         }
         private void PlayThePronunciation(Word word)
         {
-            byte[] sound = wdal.getWord(word.Word1).Pronunciation.ToArray();
-            MemoryStream ms = new MemoryStream(sound);
-            SoundPlayer player = new SoundPlayer(ms);
-            player.Play();
+            try
+            {
+                byte[] sound = wdal.getWord(word.Word1).Pronunciation.ToArray();
+                MemoryStream ms = new MemoryStream(sound);
+                SoundPlayer player = new SoundPlayer(ms);
+                player.Play();
+            }
+            catch { }
         }
     }
 }

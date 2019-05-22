@@ -7,9 +7,10 @@
        
         mc:Ignorable="d"
         Title="MainWindow" 
-        Width="1200px"
+        Width="1080px"
         Height="720px"
         WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow"
         >
     <!--WindowState="Maximized"
         WindowStyle="ThreeDBorderWindow"-->

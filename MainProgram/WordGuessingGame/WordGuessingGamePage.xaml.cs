@@ -1,7 +1,9 @@
 ﻿using DataAccess;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -54,13 +56,7 @@ namespace MainProgram.WordGuessingGame
         private int currentAttempt = GameState.FirstAttempt;
         #endregion
 
-        public WordGuessingGamePage()
-        {
-            InitializeComponent();
-            wordLength = 5;
-            DisplayGamePanel(wordLength);
-            StartGame();
-        }
+
         public WordGuessingGamePage(List<Word> list)
         {
             InitializeComponent();
@@ -71,7 +67,7 @@ namespace MainProgram.WordGuessingGame
         public void DisplayGamePanel(int wordLength)
         {
             InitiailizeGamePanel(wordLength);
-            for (int i = 0; i < Math.Pow(wordLength, 2); i++)
+            for (int i = 0; i < wordLength*5; i++)
             {
                 CreateTextBox(i);
             }
@@ -179,7 +175,7 @@ namespace MainProgram.WordGuessingGame
             int toSkip = rand.Next(0, list.Count);
             currentPuzzleWord = list[toSkip];
             wordLength = currentPuzzleWord.Word1.Length;
-            lblDescription.Content = currentPuzzleWord.Description;
+            lblDescription.Content = currentPuzzleWord.Translate;
         }
 
         public string Shuffle(string str)
@@ -259,7 +255,7 @@ namespace MainProgram.WordGuessingGame
         {
             Button btn = (Button)sender;
 
-            if (count == 5) { MessageBox.Show("you lose");return; }
+           
                
             if (index < wordLength)
             {
@@ -275,20 +271,17 @@ namespace MainProgram.WordGuessingGame
             if (index == wordLength)
             {
                 string guess = "";
-                for (int i = count*wordLength; i < GamePanel.Children.Count; i++)
+                for (int i = count*wordLength; i < count * wordLength+wordLength; i++)
                 {
                     TextBox txt = (TextBox)GamePanel.Children[i];
                     guess += txt.Text;
                 }
                 if (guess == currentPuzzleWord.Word1.ToUpper())
                 {
-
+                    for (int i = count * wordLength; i < count * wordLength + wordLength; i++)
+                        setTextBoxGreenColor(i);
                     MessageBox.Show("Conglatulation");
-                    Label lbl = new Label();
-                    lbl.Content = "Conglatulation";
-                    lbl.HorizontalAlignment = HorizontalAlignment.Center;
-                    lbl.FontSize = 50;
-                    GuessLettersPanel.Children.Add(lbl);
+                    GameOver(true);
                 }
                 else
                 {
@@ -296,19 +289,116 @@ namespace MainProgram.WordGuessingGame
                     index = 0;
                     foreach (Control i in GuessLettersPanel.Children)
                         GuessLettersPanel.Children.Remove(i);
-                    for (int i = 0; i < index + count * wordLength; i++)
+                    for (int i = 0; i < count * wordLength; i++)
                         setTextBoxGrayColor(i);
                     CreateLetter();
                     
                 }
             }
+
+            if (count == 5)
+            {
+                MessageBox.Show("you lose");
+                GameOver(false);
+                return;
+            }
         }
 
+        private void setTextBoxGreenColor(int i)
+        {
+            TextBox txt = (TextBox)GamePanel.Children[i];
+            txt.Background = new SolidColorBrush(Colors.LightGreen);
+        }
 
         private void setTextBoxGrayColor(int i)
         {
             TextBox txt = (TextBox)GamePanel.Children[i];
             txt.Background = new SolidColorBrush(Colors.DarkGray);
+        }
+
+        private void GameOver(bool win)
+        {
+            btnHome.Visibility = Visibility.Visible;
+            Label lbl = new Label();
+            lbl.HorizontalAlignment = HorizontalAlignment.Center;
+            lbl.FontSize = 50;
+
+            Button btnRefresh = new Button() {
+                Width = 50,
+                Height = 50,
+                Content = new System.Windows.Controls.Image
+                {
+                    Source = new BitmapImage(new Uri(string.Format("../../Images/Refresh.png"), UriKind.Relative)),
+                    VerticalAlignment = VerticalAlignment.Center
+                }
+            };
+
+            btnRefresh.Click += new RoutedEventHandler(btnRefresh_Click);
+
+            Button btnPrononciation = new Button()
+            {
+                Width = 50,
+                Height = 50,
+                Content = new System.Windows.Controls.Image
+                {
+                    Source = new BitmapImage(new Uri(String.Format("../../Images/play-icon.jpg"), UriKind.Relative)),
+                    VerticalAlignment = VerticalAlignment.Center
+                }
+            };
+            btnPrononciation.Click += new RoutedEventHandler(btnPrononciation_Click);
+            
+            if (win)
+            {
+                lbl.Content = "Conglatulation";
+            }
+            else
+            {
+                lbl.Content = "The correct word is " + currentPuzzleWord.Word1;
+            }
+            
+            
+            GuessLettersPanel.Children.Add(lbl);
+            GuessLettersPanel.Children.Add(btnRefresh);
+            GuessLettersPanel.Children.Add(btnPrononciation);
+        }
+
+        private void btnPrononciation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                byte[] sound = currentPuzzleWord.Pronunciation.ToArray();
+                MemoryStream ms = new MemoryStream(sound);
+                SoundPlayer player = new SoundPlayer(ms);
+                player.Play();
+            }
+            catch { }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            btnHome.Visibility = Visibility.Hidden;
+            EmptyGuessPanel();
+            EmptyGamePanel();
+            StartGame();
+        }
+
+        private void EmptyGamePanel()
+        {
+            while (GamePanel.Children.Count > 0)
+                GamePanel.Children.RemoveAt(0);
+        }
+        private void EmptyGuessPanel()
+        {
+            while (GuessLettersPanel.Children.Count > 0)
+                GuessLettersPanel.Children.RemoveAt(0);
+        }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            while (this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
         }
     }
 }

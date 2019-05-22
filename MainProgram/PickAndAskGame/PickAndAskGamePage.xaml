@@ -5,33 +5,39 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MainProgram.PickAndAskGame"
       mc:Ignorable="d" 
-      Width="1366px"
-      Height="766px"
+      Width="1080px"
+      Height="680px"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PickAndAskGamePage">
 
-    <Grid Background="#B5CBEF">
-        <StackPanel HorizontalAlignment="Center"  Margin="150,80,150,80"  Width="916" Orientation="Horizontal">
-            <Label x:Name="lblChooseWord" Content="Hãy chọn hình cho từ " Height="64" Margin="20,10,0,0" VerticalAlignment="Top" Width="auto" FontSize="18" />
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="../../Images/MainPageBackground.jpg"></ImageBrush>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Center"  Margin="150,80,150,80"  Width="916" Orientation="Vertical">
 
-            <Button Name="btn_Pic1" Margin="0,0,20,0" Height="177" Width="132" Click="Check_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                <StackPanel>
-                    <Image  x:Name="image_1"  Height="177" Margin="0,0,0,0" Width="132"  Stretch="Fill"/>
-                    <Label Name="lbl_Pic1"></Label>
-                </StackPanel>
-            </Button>
-            <Button Name="btn_Pic2" Margin="0,0,20,0" Height="177" Width="132" Click="Check_Click">
-                <StackPanel>
-                    <Image x:Name="image_2"  Height="177" Margin="0,0,0,0"  Width="132" Stretch="Fill"/>
-                    <Label Name="lbl_Pic2"></Label>
-                </StackPanel>
-            </Button>
-            <Button Name="btn_Pic3" Margin="0,0,20,0" Height="177" Width="132" Click="Check_Click">
-                <StackPanel>
-                    <Image x:Name="image_3"  Height="177" Margin="0,0,0,0"  Width="132"  Stretch="Fill"/>
-                    <Label Name="lbl_Pic3"></Label>
-                </StackPanel>
-            </Button>
+            <Label x:Name="lblChooseWord" Content="Hãy chọn hình cho từ " Height="64" HorizontalAlignment="Center" Margin="20,80,0,0" VerticalAlignment="Top" Width="auto" FontSize="18" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btn_Pic1" Margin="0,0,20,0" Height="177" Width="132" Click="Check_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <StackPanel>
+                        <Image  x:Name="image_1"  Height="177" Margin="0,0,0,0" Width="132"  Stretch="Fill"/>
+                        <Label x:Name="lbl_Pic1"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btn_Pic2" Margin="0,0,20,0" Height="177" Width="132" Click="Check_Click">
+                    <StackPanel>
+                        <Image x:Name="image_2"  Height="177" Margin="0,0,0,0"  Width="132" Stretch="Fill"/>
+                        <Label x:Name="lbl_Pic2"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btn_Pic3" Margin="0,0,20,0" Height="177" Width="132" Click="Check_Click">
+                    <StackPanel>
+                        <Image x:Name="image_3"  Height="177" Margin="0,0,0,0"  Width="132"  Stretch="Fill"/>
+                        <Label x:Name="lbl_Pic3"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            
         </StackPanel>
     </Grid>
 </Page>

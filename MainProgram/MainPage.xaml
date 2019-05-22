@@ -21,12 +21,12 @@
         <Grid.Background>
             <ImageBrush ImageSource="../../Images/MainPageBackground.jpg" Stretch="UniformToFill"></ImageBrush>
         </Grid.Background>
-        <Image Source="../../logo.png" Width="300px" Height="300px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="192,-40,230,0" Grid.Column="2" />
+        <Image Source="../../Images/logo.png" Width="300px" Height="300px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="192,-40,230,0" Grid.Column="2" />
 
         <Button Height="250px" Width="200px" Margin="566,284,374,268" Background="Transparent" Grid.Column="2" Click="PairGameClick">
             <StackPanel>
                 <Image Source="../../Images/PairGame.png" Stretch="UniformToFill"/>
-                <Label Content="Pair game"  FontSize="20px" Visibility="Visible" HorizontalAlignment="Center" Opacity="4"/>
+                <Label Content="practice"  FontSize="20px" Visibility="Visible" HorizontalAlignment="Center" Opacity="4"/>
             </StackPanel>
         </Button>
         <Button Height="250px" Width="200px" Margin="296,284,644,268" Background="Transparent" Grid.Column="2" Click="LearningWord_Click">

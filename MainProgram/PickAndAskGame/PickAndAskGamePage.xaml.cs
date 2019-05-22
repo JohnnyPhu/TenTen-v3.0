@@ -56,7 +56,7 @@ namespace MainProgram.PickAndAskGame
             ChosenWord = getRandomWord();
             RandomWord1 = getRandomWord();
             RandomWord2 = getRandomWord();
-            lblChooseWord.Content = "Hãy chọn hình cho từ "+ChosenWord.Word1.ToString();
+            lblChooseWord.Content = "Can you find "+ChosenWord.Word1.ToString()+" ?";
             Random ran = new Random();
             ChosenPosition = ran.Next(1,3);
             switch (ChosenPosition)

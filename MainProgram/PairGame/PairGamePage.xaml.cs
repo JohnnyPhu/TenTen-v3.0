@@ -78,71 +78,73 @@ namespace MainProgram.PairGame
                 for (int j = 0; j < column; j++)
                     CreateRectangle(i,j);
             gameController.StartGame(cardNumber);
-            StartTimer();
+            //StartTimer();
         }
 
-        private void StartTimer()
-        {
-            DoubleAnimation daValueProperty = new DoubleAnimation();
-            daValueProperty.From = 200;
-            daValueProperty.To = 0;
-            daValueProperty.Duration = TimeSpan.FromSeconds(200);
-            daValueProperty.SetValue(Storyboard.TargetNameProperty, "progressBarTimeLeft");
-            daValueProperty.SetValue(Storyboard.TargetPropertyProperty, new PropertyPath("Value"));
+        //private void StartTimer()
+        //{
+        //    DoubleAnimation daValueProperty = new DoubleAnimation();
+        //    daValueProperty.From = 200;
+        //    daValueProperty.To = 0;
+        //    daValueProperty.Duration = TimeSpan.FromSeconds(200);
+        //    daValueProperty.SetValue(Storyboard.TargetNameProperty, "progressBarTimeLeft");
+        //    daValueProperty.SetValue(Storyboard.TargetPropertyProperty, new PropertyPath("Value"));
 
-            ColorAnimation caForegroundProperty = new ColorAnimation();
-            caForegroundProperty.To = Colors.Red;
-            caForegroundProperty.BeginTime = TimeSpan.FromSeconds(170);
-            caForegroundProperty.SetValue(Storyboard.TargetNameProperty, "progressBarTimeLeft");
-            caForegroundProperty.SetValue(Storyboard.TargetPropertyProperty, new PropertyPath("Foreground.Color"));
+        //    ColorAnimation caForegroundProperty = new ColorAnimation();
+        //    caForegroundProperty.To = Colors.Red;
+        //    caForegroundProperty.BeginTime = TimeSpan.FromSeconds(170);
+        //    caForegroundProperty.SetValue(Storyboard.TargetNameProperty, "progressBarTimeLeft");
+        //    caForegroundProperty.SetValue(Storyboard.TargetPropertyProperty, new PropertyPath("Foreground.Color"));
 
-            DoubleAnimation daOpacityProperty = new DoubleAnimation();
-            daOpacityProperty.From = 1;
-            daOpacityProperty.To = 0;
-            daOpacityProperty.Duration = TimeSpan.FromMilliseconds(900);
-            daOpacityProperty.AutoReverse = true;
-            daOpacityProperty.RepeatBehavior = RepeatBehavior.Forever;
-            daOpacityProperty.BeginTime = TimeSpan.FromSeconds(185);
-            daOpacityProperty.SetValue(Storyboard.TargetNameProperty, "progressBarTimeLeft");
-            daOpacityProperty.SetValue(Storyboard.TargetPropertyProperty, new PropertyPath("Opacity"));
+        //    DoubleAnimation daOpacityProperty = new DoubleAnimation();
+        //    daOpacityProperty.From = 1;
+        //    daOpacityProperty.To = 0;
+        //    daOpacityProperty.Duration = TimeSpan.FromMilliseconds(900);
+        //    daOpacityProperty.AutoReverse = true;
+        //    daOpacityProperty.RepeatBehavior = RepeatBehavior.Forever;
+        //    daOpacityProperty.BeginTime = TimeSpan.FromSeconds(185);
+        //    daOpacityProperty.SetValue(Storyboard.TargetNameProperty, "progressBarTimeLeft");
+        //    daOpacityProperty.SetValue(Storyboard.TargetPropertyProperty, new PropertyPath("Opacity"));
 
 
-            App.TimerStoryboard = new Storyboard();
-            App.TimerStoryboard.Children.Add(daValueProperty);
-            App.TimerStoryboard.Children.Add(caForegroundProperty);
-            App.TimerStoryboard.Children.Add(daOpacityProperty);
-            App.TimerStoryboard.Duration = TimeSpan.FromSeconds(200);
+        //    App.TimerStoryboard = new Storyboard();
+        //    App.TimerStoryboard.Children.Add(daValueProperty);
+        //    App.TimerStoryboard.Children.Add(caForegroundProperty);
+        //    App.TimerStoryboard.Children.Add(daOpacityProperty);
+        //    App.TimerStoryboard.Duration = TimeSpan.FromSeconds(200);
 
-            //sb.Completed += new EventHandler(GameOver);
+        //    //sb.Completed += new EventHandler(GameOver);
 
-            App.TimerStoryboard.Begin(gameGrid, true);
+        //    App.TimerStoryboard.Begin(gameGrid, true);
 
-        }
+        //}
         private void InitiailizeGamePanel(int row,int column)
         {
            // int pair = cardNumber / 2;
-            gameGrid.MaxWidth = 1920;
-            gameGrid.MaxHeight = 768;
-            gameGrid.Width = row * 85;
-            gameGrid.Height = column * 135;
+            gameGrid.MaxWidth = 1080;
+            gameGrid.MaxHeight = 680;
+            gameGrid.Width = row * 90;
+            gameGrid.Height = column * 140;
         }
 
-        private ImageBrush SetGameBackground()
-        {
-            ImageBrush Background = new ImageBrush();
-            System.Windows.Controls.Image image = new System.Windows.Controls.Image();
-            image.Source = new BitmapImage(new Uri(
-                   String.Format("../../Images/Animals/Background{0}.jpg", Level), UriKind.Relative));
-            Background.ImageSource = image.Source;
-            return Background;
-        }
+        //private ImageBrush SetGameBackground()
+        //{
+        //    ImageBrush Background = new ImageBrush();
+        //    System.Windows.Controls.Image image = new System.Windows.Controls.Image();
+        //    image.Source = new BitmapImage(new Uri(
+        //           String.Format("../../Images/Animals/Background{0}.jpg", Level), UriKind.Relative));
+        //    Background.ImageSource = image.Source;
+        //    return Background;
+        //}
         public void CreateRectangle(int i,int j)
         {
             Rectangle rec = new Rectangle();
-            rec.Height=130;
-            rec.Width =80;
+            rec.Height=140;
+            rec.Width =90;
             rec.HorizontalAlignment = HorizontalAlignment.Center;
             rec.VerticalAlignment = VerticalAlignment.Center;
+            rec.Stroke = new SolidColorBrush(Colors.Black);
+            rec.StrokeThickness = 2;
             // Set rectangle style
             Style style = this.FindResource("RectangleStyle") as Style;
             

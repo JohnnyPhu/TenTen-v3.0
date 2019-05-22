@@ -5,25 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MainProgram.PairGame"
       mc:Ignorable="d" 
-        Width="1366px"
-      Height="766px"
-      Title="GamePage" MaxHeight="800" MinHeight="700" MaxWidth="1366" MinWidth="800">
+        Width="1080px"
+      Height="680px"
+      Title="GamePage">
     <Page.Resources>
         <Style x:Key="RectangleStyle">
             <!--<Setter Property="Rectangle.RadiusX" Value="30"/>
             <Setter Property="Rectangle.RadiusY" Value="30"/>-->
             <Setter Property="Rectangle.Margin" Value="5"/>
             <Setter Property="Rectangle.Fill" Value="{Binding Path=ActiveImage}"/>
-         
             <Setter Property="Rectangle.Stretch" Value="Fill"/>
 
             <EventSetter Event="Rectangle.MouseLeftButtonUp" Handler="rectangleLeftMouseButtonUp"></EventSetter>
         </Style>
        
     </Page.Resources>
-    <StackPanel HorizontalAlignment="Center" >
-        
-        <Grid x:Name="gameGrid" ShowGridLines="False" HorizontalAlignment="Center"  Background="LightBlue" SizeChanged="gameGrid_SizeChanged">
+    <StackPanel HorizontalAlignment="Center" Height="680" Width="1080">
+        <StackPanel.Background>
+            <ImageBrush ImageSource="../../Images/MainPageBackground.jpg"></ImageBrush>
+        </StackPanel.Background>
+        <Grid x:Name="gameGrid" ShowGridLines="False" HorizontalAlignment="Center" Margin="50" Background="LightBlue" SizeChanged="gameGrid_SizeChanged">
            
             <Grid.Resources>
                 <Style TargetType="{x:Type TextBlock}">
@@ -35,14 +36,7 @@
                 </Style>
             </Grid.Resources>
         </Grid>
-        <StatusBar>
-            <StatusBarItem>
-                <TextBlock><Run Text="Time Left:"/></TextBlock>
-            </StatusBarItem>
-            <StatusBarItem HorizontalContentAlignment="Stretch">
-                <ProgressBar x:Name="progressBarTimeLeft" Height="20" Maximum="200" Value="200"/>
-            </StatusBarItem>
-        </StatusBar>
+        
     </StackPanel>
     
     <!--<StackPanel x:Name="gamePanel" Height="300px" Width="300px" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
