@@ -77,8 +77,8 @@ namespace MainProgram.WordGuessingGame
 
         private void InitiailizeGamePanel(int wordLength)
         {
-            GamePanel.Width = wordLength * 50;
-            GamePanel.Height = wordLength * 70;
+            GamePanel.Width = 5 * 50;
+            GamePanel.Height = 5 * 60;
         }
 
         public void CreateTextBox(int i)

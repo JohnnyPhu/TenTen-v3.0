@@ -58,7 +58,7 @@ namespace MainProgram.PickAndAskGame
             RandomWord2 = getRandomWord();
             lblChooseWord.Content = "Can you find "+ChosenWord.Word1.ToString()+" ?";
             Random ran = new Random();
-            ChosenPosition = ran.Next(1,3);
+            ChosenPosition = ran.Next(1,4);
             switch (ChosenPosition)
             {
                 case 1:

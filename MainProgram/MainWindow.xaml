@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MainProgram"
        
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="TenTen" 
         Width="1080px"
         Height="720px"
         WindowStartupLocation="CenterScreen"

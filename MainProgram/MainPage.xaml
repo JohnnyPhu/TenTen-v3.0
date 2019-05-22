@@ -10,13 +10,13 @@
       Width="1200px"
       Height="720px">
 
-    
-    <Grid Margin="0,0,0,-82" >
+
+    <Grid Margin="0,-2,0,-80" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="19*"/>
-           
+
         </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="../../Images/MainPageBackground.jpg" Stretch="UniformToFill"></ImageBrush>
@@ -26,7 +26,7 @@
         <Button Height="250px" Width="200px" Margin="566,284,374,268" Background="Transparent" Grid.Column="2" Click="PairGameClick">
             <StackPanel>
                 <Image Source="../../Images/PairGame.png" Stretch="UniformToFill"/>
-                <Label Content="practice"  FontSize="20px" Visibility="Visible" HorizontalAlignment="Center" Opacity="4"/>
+                <Label Content="Practice"  FontSize="20px" Visibility="Visible" HorizontalAlignment="Center" Opacity="4"/>
             </StackPanel>
         </Button>
         <Button Height="250px" Width="200px" Margin="296,284,644,268" Background="Transparent" Grid.Column="2" Click="LearningWord_Click">
@@ -35,8 +35,9 @@
                 <Label Content="Learning Word"  FontSize="20px" Visibility="Visible" HorizontalAlignment="Center" Opacity="4"/>
             </StackPanel>
         </Button>
-        <ComboBox x:Name="cbo" Grid.Column="2" HorizontalAlignment="Left" Margin="296,202,0,0" VerticalAlignment="Top" Width="470" Height="30">
-        
+        <Label Content="Choose a category: " Grid.Column="2" Height="30" Margin="296,202,704,570" FontSize="15"/>
+        <ComboBox x:Name="cbo" Grid.Column="2" HorizontalAlignment="Left" Margin="436,207,0,0" VerticalAlignment="Top" Width="330" Height="25">
+
         </ComboBox>
     </Grid>
 </Page>
