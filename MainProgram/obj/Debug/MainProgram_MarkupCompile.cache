@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-B:\WPF\Project\Source\NewSource\TenTen-v3.0\MainProgram\obj\Debug\
+D:\Project-graduated\Source\new-source\TenTen-v3.0\MainProgram\obj\Debug\
 MainProgram
 none
 false
 DEBUG;TRACE
-B:\WPF\Project\Source\NewSource\TenTen-v3.0\MainProgram\App.xaml
+D:\Project-graduated\Source\new-source\TenTen-v3.0\MainProgram\App.xaml
 62099046217
 6-366559914
 10390382184
-161156128525
+16-1068054712
 LearningWord\LearningWordPage.xaml;MainWindow.xaml;MainPage.xaml;PairGame\PairGamePage.xaml;PickAndAskGame\PickAndAskGamePage.xaml;WordGuessingGame\WordGuessingGamePage.xaml;
 
 False

@@ -12,3 +12,10 @@ B:\WPF\Project\Source\NewSource\TenTen-v3.0\GameController\bin\Debug\DataAccess.
 B:\WPF\Project\Source\NewSource\TenTen-v3.0\GameController\obj\Debug\GameController.csprojResolveAssemblyReference.cache
 B:\WPF\Project\Source\NewSource\TenTen-v3.0\GameController\obj\Debug\GameController.dll
 B:\WPF\Project\Source\NewSource\TenTen-v3.0\GameController\obj\Debug\GameController.pdb
+D:\Project-graduated\Source\new-source\TenTen-v3.0\GameController\bin\Debug\GameController.dll
+D:\Project-graduated\Source\new-source\TenTen-v3.0\GameController\bin\Debug\GameController.pdb
+D:\Project-graduated\Source\new-source\TenTen-v3.0\GameController\bin\Debug\DataAccess.dll
+D:\Project-graduated\Source\new-source\TenTen-v3.0\GameController\bin\Debug\DataAccess.pdb
+D:\Project-graduated\Source\new-source\TenTen-v3.0\GameController\obj\Debug\GameController.csprojResolveAssemblyReference.cache
+D:\Project-graduated\Source\new-source\TenTen-v3.0\GameController\obj\Debug\GameController.dll
+D:\Project-graduated\Source\new-source\TenTen-v3.0\GameController\obj\Debug\GameController.pdb
