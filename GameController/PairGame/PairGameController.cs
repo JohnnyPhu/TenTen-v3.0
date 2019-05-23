@@ -168,7 +168,7 @@ namespace GameController.PairGame
             if (!gameCards.Exists(c => c.Status == CardState.Covered))
             {
                 
-                soundController.Play(SoundType.GameOver);
+                //soundController.Play(SoundType.GameOver);
                 gameState = GameState.GameOver;
                 return;
             }
