@@ -40,7 +40,7 @@
             <Button x:Name="btnHome" Click="btnHome_Click" Visibility="Hidden" HorizontalAlignment="Center" Width="250" Height="50" >
                 <StackPanel Orientation="Horizontal">
                     <Image Source="../../Images/Home.png"></Image>
-                    <Label Padding="0">Back to home page</Label>
+                    <Label Padding="0" Margin="0,0,0,5">Back to home page</Label>
                 </StackPanel>
             </Button>
         </StackPanel>
