@@ -128,6 +128,8 @@ namespace MainProgram.WordGuessingGame
         string shuffle;
         private void StartGame()
         {
+            EmptyGamePanel();
+            EmptyGuessPanel();
             getPuzzleWord();
             //Random r = new Random(DateTime.Now.Millisecond);
             //for (int i = 0; i < wordLength; i++)
@@ -272,7 +274,10 @@ namespace MainProgram.WordGuessingGame
             }
             if (index == wordLength)
             {
+
+                index = 0;
                 string guess = "";
+                EmptyGuessPanel();
                 for (int i = count*wordLength; i < count * wordLength+wordLength; i++)
                 {
                     TextBox txt = (TextBox)GamePanel.Children[i];
@@ -288,7 +293,6 @@ namespace MainProgram.WordGuessingGame
                 else
                 {
                     count++;
-                    index = 0;
                     EmptyGuessPanel();
                     for (int i = 0; i < count * wordLength; i++)
                         setTextBoxGrayColor(i);
@@ -299,7 +303,7 @@ namespace MainProgram.WordGuessingGame
 
             if (count == 5)
             {
-                MessageBox.Show("you lose");
+                //MessageBox.Show("you lose");
                 GameOver(false);
                 return;
             }
@@ -319,11 +323,12 @@ namespace MainProgram.WordGuessingGame
 
         private void GameOver(bool win)
         {
+            count = 0;
             btnHome.Visibility = Visibility.Visible;
             Label lbl = new Label();
             lbl.HorizontalAlignment = HorizontalAlignment.Center;
             lbl.FontSize = 50;
-
+            EmptyGuessPanel();
             Button btnRefresh = new Button() {
                 Width = 50,
                 Height = 50,

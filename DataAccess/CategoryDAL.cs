@@ -17,7 +17,8 @@ namespace DataAccess
         public List<Category> getAll()
         {
             List<Category> list = new List<Category>();
-            list = db.Categories.ToList<Category>();
+            list = db.Categories.Where(x=>x.CategoryID!=4 && x.CategoryID!=6).ToList<Category>();
+        
             return list;
         }
     }
