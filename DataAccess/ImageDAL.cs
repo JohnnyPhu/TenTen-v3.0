@@ -25,7 +25,7 @@ namespace DataAccess
             List<Image> imgList = new List<Image>();
             foreach(Word w in wordList)
             {
-                Image i = db.Images.Single(x => x.WordID == w.Word1);
+                Image i = db.Images.Where(x => x.WordID == w.Word1).FirstOrDefault();
                 imgList.Add(i);
             }
             return imgList;

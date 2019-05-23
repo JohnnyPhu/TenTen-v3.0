@@ -77,7 +77,7 @@ namespace MainProgram.WordGuessingGame
 
         private void InitiailizeGamePanel(int wordLength)
         {
-            GamePanel.Width = 5 * 50;
+            GamePanel.Width = wordLength * 50;
             GamePanel.Height = 5 * 60;
         }
 
@@ -176,6 +176,8 @@ namespace MainProgram.WordGuessingGame
             currentPuzzleWord = list[toSkip];
             wordLength = currentPuzzleWord.Word1.Length;
             lblDescription.Content = currentPuzzleWord.Translate;
+            lblDescription.FontSize = 25;
+            lblDescription.HorizontalContentAlignment = HorizontalAlignment.Center;
         }
 
         public string Shuffle(string str)
@@ -280,15 +282,14 @@ namespace MainProgram.WordGuessingGame
                 {
                     for (int i = count * wordLength; i < count * wordLength + wordLength; i++)
                         setTextBoxGreenColor(i);
-                    MessageBox.Show("Conglatulation");
+                    //MessageBox.Show("Conglatulation");
                     GameOver(true);
                 }
                 else
                 {
                     count++;
                     index = 0;
-                    foreach (Control i in GuessLettersPanel.Children)
-                        GuessLettersPanel.Children.Remove(i);
+                    EmptyGuessPanel();
                     for (int i = 0; i < count * wordLength; i++)
                         setTextBoxGrayColor(i);
                     CreateLetter();
@@ -350,6 +351,7 @@ namespace MainProgram.WordGuessingGame
             if (win)
             {
                 lbl.Content = "Conglatulation";
+                lbl.Foreground = Brushes.Red;
             }
             else
             {
