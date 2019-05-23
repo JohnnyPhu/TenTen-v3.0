@@ -32,5 +32,16 @@ namespace DataAccess.Properties {
                 return ((string)(this["TenTenConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-R2G82RP\\HAINAM;Initial Catalog=TenTen;Integrated Security=Tru" +
+            "e")]
+        public string TenTenConnectionString1 {
+            get {
+                return ((string)(this["TenTenConnectionString1"]));
+            }
+        }
     }
 }
