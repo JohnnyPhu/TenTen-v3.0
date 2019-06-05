@@ -14,3 +14,4 @@ D:\Project-graduated\Source\new-source\TenTen-v3.0\DataAccess\bin\Debug\DataAcce
 D:\Project-graduated\Source\new-source\TenTen-v3.0\DataAccess\bin\Debug\DataAccess.pdb
 D:\Project-graduated\Source\new-source\TenTen-v3.0\DataAccess\obj\Debug\DataAccess.dll
 D:\Project-graduated\Source\new-source\TenTen-v3.0\DataAccess\obj\Debug\DataAccess.pdb
+D:\Project-graduated\Source\new-source\TenTen-v3.0\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache

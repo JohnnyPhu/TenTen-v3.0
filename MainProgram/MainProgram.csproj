@@ -178,6 +178,8 @@
     <Resource Include="Images\play-icon.jpg" />
     <Resource Include="Images\Refresh.png" />
     <Resource Include="Images\Home.png" />
+    <Resource Include="Images\back-ground-learning.png" />
+    <Resource Include="Images\learning.jpg" />
     <Content Include="Sounds\flipCard.wav" />
     <Content Include="Sounds\GameOver.wav" />
     <Content Include="Sounds\LevelComplete.wav" />

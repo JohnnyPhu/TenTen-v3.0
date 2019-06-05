@@ -127,5 +127,10 @@ namespace MainProgram.LearningWord
             }
             catch { }
         }
+
+        //private void SplitWord(string wordsplling)
+        //{
+            
+        //}
     }
 }
